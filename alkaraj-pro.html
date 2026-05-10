@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
 <title>ALKARAJ PRO</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet"/>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 body{background:#0B0B0B;color:#F5F5F7;font-family:Inter,sans-serif;min-height:100vh}
@@ -12,10 +12,10 @@ body{background:#0B0B0B;color:#F5F5F7;font-family:Inter,sans-serif;min-height:10
 .scr.on{display:flex}
 .sb{flex:1;overflow-y:auto;padding-bottom:90px}
 #sp{background:#0B0B0B;align-items:center;justify-content:center;flex-direction:column;gap:20px}
-.sp-logo{width:140px;height:140px;border-radius:30px;overflow:hidden;box-shadow:0 0 60px rgba(255,212,0,.5);animation:glow 2s ease-in-out infinite}
+.sp-logo{width:150px;height:150px;border-radius:32px;overflow:hidden;box-shadow:0 0 60px rgba(255,212,0,.5);animation:glow 2s ease-in-out infinite}
 @keyframes glow{0%,100%{box-shadow:0 0 40px rgba(255,212,0,.3)}50%{box-shadow:0 0 80px rgba(255,212,0,.7)}}
 @keyframes dp{0%,100%{transform:scale(1);opacity:.3}50%{transform:scale(1.7);opacity:1}}
-.nav{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);width:calc(100% - 32px);max-width:430px;background:rgba(28,28,30,.96);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:10px 6px 8px;display:flex;align-items:center;justify-content:space-around;z-index:100}
+.nav{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);width:calc(100% - 32px);max-width:430px;background:rgba(28,28,30,.96);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:10px 6px 8px;display:flex;align-items:center;justify-content:space-around;z-index:100}
 .ni{display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;padding:4px 10px;border-radius:14px;min-width:46px}
 .ni.on{background:rgba(255,212,0,.12)}
 .ni-i{font-size:22px}
@@ -24,11 +24,16 @@ body{background:#0B0B0B;color:#F5F5F7;font-family:Inter,sans-serif;min-height:10
 .nav-add{width:50px;height:50px;background:#FFD400;border-radius:16px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:28px;color:#0B0B0B;margin-top:-8px;box-shadow:0 4px 16px rgba(255,212,0,.4)}
 .hdr{padding:52px 20px 14px;display:flex;align-items:center;justify-content:space-between}
 .hdr h1{font-size:22px;font-weight:800}
+.sbar{margin:0 20px 18px;background:#1C1C1E;border-radius:12px;padding:12px 16px;display:flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.07)}
+.sdot{width:8px;height:8px;background:#30D158;border-radius:50%;box-shadow:0 0 8px #30D158;animation:dp 2s infinite;flex-shrink:0}
 .stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0 20px 18px}
-.sc{background:#1C1C1E;border-radius:16px;padding:16px;border:1px solid rgba(255,255,255,.07);cursor:pointer}
-.sc-n{font-size:30px;font-weight:800}
+.sc{background:#1C1C1E;border-radius:16px;padding:16px;border:1px solid rgba(255,255,255,.07);cursor:pointer;position:relative;overflow:hidden}
+.sc-n{font-size:30px;font-weight:800;line-height:1}
 .sc-l{font-size:12px;font-weight:600;margin-top:3px;color:#6E6E73}
 .bdg{display:inline-flex;font-size:9px;font-weight:700;padding:2px 7px;border-radius:20px;margin-top:7px}
+.sec{padding:0 20px 10px;display:flex;align-items:center;justify-content:space-between}
+.sec h3{font-size:15px;font-weight:700}
+.sec a{font-size:12px;color:#FFD400;font-weight:600;cursor:pointer}
 .cars{display:flex;gap:14px;padding:0 20px 18px;overflow-x:auto}
 .cc{min-width:190px;background:#1C1C1E;border-radius:16px;border:1px solid rgba(255,255,255,.07);overflow:hidden;cursor:pointer;flex-shrink:0}
 .cc-img{height:90px;background:linear-gradient(135deg,#2C2C2E,#3A3A3C);display:flex;align-items:center;justify-content:center;font-size:44px;position:relative}
@@ -39,23 +44,19 @@ body{background:#0B0B0B;color:#F5F5F7;font-family:Inter,sans-serif;min-height:10
 .qa{background:#1C1C1E;border-radius:12px;padding:16px 6px;text-align:center;cursor:pointer;border:1px solid rgba(255,255,255,.07)}
 .qa-i{font-size:26px;margin-bottom:6px}
 .qa-l{font-size:10px;font-weight:700}
-.sec{padding:0 20px 10px;display:flex;align-items:center;justify-content:space-between}
-.sec h3{font-size:15px;font-weight:700}
-.sec a{font-size:12px;color:#FFD400;font-weight:600;cursor:pointer}
-.bk{width:36px;height:36px;background:#1C1C1E;border-radius:10px;display:flex;align-items:center;justify-content:center;cursor:pointer;border:1px solid rgba(255,255,255,.12);font-size:20px}
-.btn{width:100%;padding:15px;background:#FFD400;border:none;border-radius:10px;color:#0B0B0B;font-family:Inter,sans-serif;font-size:15px;font-weight:800;cursor:pointer}
+.bk{width:36px;height:36px;background:#1C1C1E;border-radius:10px;display:flex;align-items:center;justify-content:center;cursor:pointer;border:1px solid rgba(255,255,255,.12);font-size:20px;flex-shrink:0}
+.btn{padding:15px;background:#FFD400;border:none;border-radius:10px;color:#0B0B0B;font-family:Inter,sans-serif;font-size:15px;font-weight:800;cursor:pointer;width:100%}
 .btn-s{padding:13px;background:#1C1C1E;border:1.5px solid rgba(255,255,255,.12);border-radius:10px;color:#F5F5F7;font-family:Inter,sans-serif;font-size:13px;font-weight:700;cursor:pointer}
 .inp{background:#1C1C1E;border:1.5px solid rgba(255,255,255,.12);border-radius:10px;padding:14px 16px;color:#F5F5F7;font-family:Inter,sans-serif;font-size:15px;outline:none;width:100%}
 .inp:focus{border-color:#FFD400}
 .rb{padding:12px 6px;border-radius:10px;border:1.5px solid rgba(255,255,255,.12);background:#1C1C1E;color:#6E6E73;font-family:Inter,sans-serif;font-size:11px;font-weight:700;cursor:pointer;text-align:center}
 .rb.on{border-color:#FFD400;background:rgba(255,212,0,.12);color:#FFD400}
-.jcbar{display:flex;align-items:center;padding:0 16px 12px;overflow-x:auto}
+.jcbar{display:flex;align-items:center;padding:0 16px 12px;overflow-x:auto;flex-shrink:0}
 .jcs-c{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0}
 .jcs.d .jcs-c{background:#30D158;color:#0B0B0B}
 .jcs.a .jcs-c{background:#FFD400;color:#0B0B0B}
 .jcs.p .jcs-c{background:#2C2C2E;color:#6E6E73}
 .jln{height:1px;width:14px;background:rgba(255,255,255,.1);flex-shrink:0}
-.jcs.d+.jln{background:#30D158}
 .frm{padding:0 20px;display:flex;flex-direction:column;gap:12px}
 .fsec{background:#1C1C1E;border-radius:16px;padding:16px;border:1px solid rgba(255,255,255,.07)}
 .fsec-t{font-size:11px;font-weight:700;color:#FFD400;margin-bottom:12px;text-transform:uppercase;letter-spacing:.04em}
@@ -64,12 +65,12 @@ body{background:#0B0B0B;color:#F5F5F7;font-family:Inter,sans-serif;min-height:10
 .fl{font-size:10px;color:#6E6E73;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
 .fi2{background:#2C2C2E;border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:11px 12px;color:#F5F5F7;font-family:Inter,sans-serif;font-size:13px;outline:none;width:100%}
 .fi2:focus{border-color:#FFD400}
-select.fi2{appearance:none}
+select.fi2{appearance:none;-webkit-appearance:none}
 .btns{padding:14px 20px 16px;display:flex;gap:10px}
 .stabs{display:flex;gap:6px;padding:0 0 10px;overflow-x:auto}
-.stab{padding:6px 13px;border-radius:20px;border:1px solid rgba(255,255,255,.12);background:transparent;color:#6E6E73;font-size:10px;font-weight:700;cursor:pointer;white-space:nowrap}
+.stab{padding:6px 13px;border-radius:20px;border:1px solid rgba(255,255,255,.12);background:transparent;color:#6E6E73;font-size:10px;font-weight:700;cursor:pointer;white-space:nowrap;flex-shrink:0}
 .stab.on{background:rgba(255,212,0,.12);border-color:#FFD400;color:#FFD400}
-.slist{display:flex;flex-direction:column;gap:5px;max-height:300px;overflow-y:auto}
+.slist{display:flex;flex-direction:column;gap:5px;max-height:280px;overflow-y:auto}
 .si{display:flex;align-items:center;padding:10px 12px;background:#2C2C2E;border-radius:8px;border:1px solid rgba(255,255,255,.07);cursor:pointer}
 .si.on{border-color:#FFD400;background:rgba(255,212,0,.12)}
 .si-ck{width:20px;height:20px;border-radius:50%;border:1.5px solid #6E6E73;display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0;margin-right:10px}
@@ -90,6 +91,15 @@ select.fi2{appearance:none}
 .aiin{flex:1;background:#1C1C1E;border:1px solid rgba(255,255,255,.12);border-radius:13px;padding:11px 14px;color:#F5F5F7;font-family:Inter,sans-serif;font-size:13px;outline:none}
 .aiin:focus{border-color:#FFD400}
 .aisen{width:40px;height:40px;background:#FFD400;border-radius:11px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;color:#0B0B0B;font-weight:700}
+.tl{margin:0 20px}
+.tli{display:flex;gap:10px;margin-bottom:14px;position:relative}
+.tli::before{content:"";position:absolute;top:20px;left:9px;bottom:-14px;width:1px;background:rgba(255,255,255,.1)}
+.tli:last-child::before{display:none}
+.tld{width:20px;height:20px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:9px;z-index:1;font-weight:800}
+.tld.d{background:#30D158;color:#0B0B0B}
+.tld.c{background:#FFD400;animation:dp 1.5s ease-in-out infinite}
+.tld.p{background:#3A3A3C}
+.cpb{margin:14px 20px;background:#1C1C1E;border-radius:16px;padding:16px;border:1px solid rgba(255,255,255,.07)}
 </style>
 </head>
 <body>
@@ -102,7 +112,7 @@ select.fi2{appearance:none}
   <div style="text-align:center">
     <div style="font-size:32px;font-weight:900;letter-spacing:-1px">ALKARAJ</div>
     <div style="font-size:14px;font-weight:700;color:#FFD400;margin-top:4px">PRO</div>
-    <div style="font-size:11px;color:#6E6E73;margin-top:8px">Al Waqia Reality Business</div>
+    <div style="font-size:11px;color:#6E6E73;margin-top:6px">Al Waqia Reality Business</div>
   </div>
   <div style="display:flex;gap:6px">
     <div style="width:6px;height:6px;background:#FFD400;border-radius:50%;animation:dp 1.2s ease-in-out infinite"></div>
@@ -114,12 +124,12 @@ select.fi2{appearance:none}
 <!-- LOGIN -->
 <div class="scr" id="lg">
   <div style="padding:64px 24px 0;text-align:center">
-    <div style="width:60px;height:60px;border-radius:16px;overflow:hidden;margin:0 auto 18px;box-shadow:0 0 28px rgba(255,212,0,.4)"><img class="logoRef" src="#" style="width:100%;height:100%;object-fit:cover" alt=""/></div>
+    <div style="width:72px;height:72px;border-radius:18px;overflow:hidden;margin:0 auto 18px;box-shadow:0 0 28px rgba(255,212,0,.4)"><img class="logoRef" src="#" style="width:100%;height:100%;object-fit:cover" alt=""/></div>
     <div style="font-size:26px;font-weight:800">Welcome Back</div>
-    <div style="font-size:13px;color:#6E6E73;margin-top:6px">Sign in to ALKARAJ PRO</div>
+    <div style="font-size:13px;color:#6E6E73;margin-top:6px">ALKARAJ PRO</div>
   </div>
   <div style="padding:28px 24px;flex:1;display:flex;flex-direction:column;justify-content:center;gap:14px">
-    <div><div style="font-size:10px;font-weight:700;color:#6E6E73;margin-bottom:6px;text-transform:uppercase;letter-spacing:.07em">Mobile</div><input class="inp" type="tel" placeholder="+968 XXXX XXXX"/></div>
+    <div><div style="font-size:10px;font-weight:700;color:#6E6E73;margin-bottom:6px;text-transform:uppercase;letter-spacing:.07em">Mobile</div><input class="inp" type="tel" placeholder="+968 XXXX XXXX" dir="ltr"/></div>
     <div><div style="font-size:10px;font-weight:700;color:#6E6E73;margin-bottom:6px;text-transform:uppercase;letter-spacing:.07em">Password</div><input class="inp" type="password" placeholder="Password"/></div>
     <div>
       <div style="font-size:10px;font-weight:700;color:#6E6E73;margin-bottom:8px;text-transform:uppercase;letter-spacing:.07em">Role</div>
@@ -138,13 +148,13 @@ select.fi2{appearance:none}
 <div class="scr" id="db">
   <div class="sb">
     <div class="hdr">
-      <div><h1 id="gH">Good Morning</h1></div>
+      <div><h1 id="gH">Good Morning</h1><div style="font-size:9px;color:#48484A;font-family:Cairo,sans-serif;margin-top:2px" id="gA">&#x635;&#x628;&#x627;&#x62D; &#x627;&#x644;&#x62E;&#x64A;&#x631;</div></div>
       <div style="width:40px;height:40px;border-radius:12px;overflow:hidden;cursor:pointer" onclick="goTo('rpt')"><img class="logoRef" src="#" style="width:100%;height:100%;object-fit:cover" alt=""/></div>
     </div>
-    <div style="margin:0 20px 18px;background:#1C1C1E;border-radius:12px;padding:12px 16px;display:flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.07)">
-      <div style="width:8px;height:8px;background:#30D158;border-radius:50%;box-shadow:0 0 8px #30D158;animation:dp 2s infinite;flex-shrink:0"></div>
-      <div style="font-size:13px;font-weight:600">Workshop Active</div>
-      <div style="font-size:11px;color:#6E6E73;margin-left:auto" id="clk">--:--</div>
+    <div class="sbar">
+      <div class="sdot"></div>
+      <div style="flex:1"><div style="font-size:13px;font-weight:600">Workshop Active</div></div>
+      <div style="font-size:11px;color:#6E6E73" id="clk">--:--</div>
     </div>
     <div class="stats">
       <div class="sc" onclick="openCar('BMW 530i','BKD 1234','Ahmed',35,'cr')">
@@ -168,15 +178,19 @@ select.fi2{appearance:none}
         <div class="bdg" style="background:rgba(255,59,48,.12);color:#FF3B30">Delayed</div>
       </div>
     </div>
-    <div class="sec"><h3>Vehicles</h3><a onclick="goTo('cd')">See all</a></div>
+    <div class="sec"><h3>Current Vehicles</h3><a onclick="goTo('cd')">See all</a></div>
     <div class="cars">
-      <div class="cc" onclick="openCar('BMW 530i','BKD 1234','Ahmed',35,'cr')">
+      <div class="cc" onclick="openCar('BMW 530i','BKD 1234','Ahmed Al-Maamari',35,'cr')">
         <div class="cc-img">&#x1F698;<div style="position:absolute;top:8px;right:8px;background:rgba(255,59,48,.2);color:#FF3B30;border:1px solid rgba(255,59,48,.3);padding:3px 7px;border-radius:5px;font-size:9px;font-weight:700">Critical</div></div>
         <div class="cc-bd"><div class="cc-pl">BKD 1234</div><div class="cc-mo">BMW 530i 2020</div><div style="font-size:10px;color:#6E6E73;margin-top:2px">Ahmed Al-Maamari</div></div>
       </div>
-      <div class="cc" onclick="openCar('Toyota Camry','MNS 5678','Salem',70,'pr')">
+      <div class="cc" onclick="openCar('Toyota Camry','MNS 5678','Salem Al-Rahbi',70,'pr')">
         <div class="cc-img">&#x1F699;<div style="position:absolute;top:8px;right:8px;background:rgba(255,159,10,.2);color:#FF9F0A;border:1px solid rgba(255,159,10,.3);padding:3px 7px;border-radius:5px;font-size:9px;font-weight:700">In Progress</div></div>
         <div class="cc-bd"><div class="cc-pl">MNS 5678</div><div class="cc-mo">Toyota Camry 2022</div><div style="font-size:10px;color:#6E6E73;margin-top:2px">Salem Al-Rahbi</div></div>
+      </div>
+      <div class="cc" onclick="openCar('Lexus ES 350','ARB 9012','Khalid Al-Balushi',100,'rd')">
+        <div class="cc-img">&#x1F697;<div style="position:absolute;top:8px;right:8px;background:rgba(48,209,88,.2);color:#30D158;border:1px solid rgba(48,209,88,.3);padding:3px 7px;border-radius:5px;font-size:9px;font-weight:700">Ready</div></div>
+        <div class="cc-bd"><div class="cc-pl">ARB 9012</div><div class="cc-mo">Lexus ES 350 2021</div><div style="font-size:10px;color:#6E6E73;margin-top:2px">Khalid Al-Balushi</div></div>
       </div>
     </div>
     <div class="sec"><h3>Quick Actions</h3></div>
@@ -209,11 +223,20 @@ select.fi2{appearance:none}
       <div id="cB" style="background:rgba(255,59,48,.2);color:#FF3B30;border:1px solid rgba(255,59,48,.3);padding:4px 10px;border-radius:6px;font-size:9px;font-weight:700">Critical</div>
     </div>
     <div style="margin:0 20px 14px;background:#1C1C1E;border-radius:16px;height:180px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.07)">
-      <div style="font-size:80px">&#x1F698;</div>
+      <div style="font-size:90px">&#x1F698;</div>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 20px 14px">
-      <div style="background:#1C1C1E;border-radius:10px;padding:11px 12px;border:1px solid rgba(255,255,255,.07);display:flex;align-items:center;gap:10px"><div style="width:10px;height:10px;border-radius:50%;background:#FF3B30;box-shadow:0 0 6px #FF3B30"></div><div><div style="font-size:12px;font-weight:700">Engine</div><div style="font-size:9px;color:#6E6E73">Oil Leak</div></div></div>
-      <div style="background:#1C1C1E;border-radius:10px;padding:11px 12px;border:1px solid rgba(255,255,255,.07);display:flex;align-items:center;gap:10px"><div style="width:10px;height:10px;border-radius:50%;background:#30D158;box-shadow:0 0 6px #30D158"></div><div><div style="font-size:12px;font-weight:700">Electrical</div><div style="font-size:9px;color:#6E6E73">All clear</div></div></div>
+      <div style="background:#1C1C1E;border-radius:10px;padding:11px 12px;border:1px solid rgba(255,255,255,.07);display:flex;align-items:center;gap:10px"><div style="width:10px;height:10px;border-radius:50%;background:#FF3B30;box-shadow:0 0 6px #FF3B30;flex-shrink:0"></div><div><div style="font-size:12px;font-weight:700">Engine</div><div style="font-size:9px;color:#6E6E73">Oil Leak</div></div></div>
+      <div style="background:#1C1C1E;border-radius:10px;padding:11px 12px;border:1px solid rgba(255,255,255,.07);display:flex;align-items:center;gap:10px"><div style="width:10px;height:10px;border-radius:50%;background:#FF9F0A;box-shadow:0 0 6px #FF9F0A;flex-shrink:0"></div><div><div style="font-size:12px;font-weight:700">Brakes</div><div style="font-size:9px;color:#6E6E73">Check needed</div></div></div>
+      <div style="background:#1C1C1E;border-radius:10px;padding:11px 12px;border:1px solid rgba(255,255,255,.07);display:flex;align-items:center;gap:10px"><div style="width:10px;height:10px;border-radius:50%;background:#30D158;box-shadow:0 0 6px #30D158;flex-shrink:0"></div><div><div style="font-size:12px;font-weight:700">Electrical</div><div style="font-size:9px;color:#6E6E73">All clear</div></div></div>
+      <div style="background:#1C1C1E;border-radius:10px;padding:11px 12px;border:1px solid rgba(255,255,255,.07);display:flex;align-items:center;gap:10px"><div style="width:10px;height:10px;border-radius:50%;background:#3B82F6;box-shadow:0 0 6px #3B82F6;flex-shrink:0"></div><div><div style="font-size:12px;font-weight:700">Suspension</div><div style="font-size:9px;color:#6E6E73">Repaired</div></div></div>
+    </div>
+    <div class="sec"><h3>Timeline</h3></div>
+    <div class="tl">
+      <div class="tli"><div class="tld d">&#x2713;</div><div><div style="font-size:12px;font-weight:700">Vehicle Received</div><div style="font-size:10px;color:#6E6E73">Inspection complete</div><div style="font-size:9px;color:#48484A;margin-top:3px">09:30</div></div></div>
+      <div class="tli"><div class="tld d">&#x2713;</div><div><div style="font-size:12px;font-weight:700">Diagnostic Complete</div><div style="font-size:10px;color:#6E6E73">3 fault codes found</div><div style="font-size:9px;color:#48484A;margin-top:3px">10:15</div></div></div>
+      <div class="tli"><div class="tld c">&#x25CF;</div><div><div style="font-size:12px;font-weight:700">Oil Leak Repair</div><div style="font-size:10px;color:#6E6E73">In progress</div></div></div>
+      <div class="tli"><div class="tld p"></div><div><div style="font-size:12px;font-weight:700">Final Check</div><div style="font-size:10px;color:#6E6E73">Tomorrow 5:00 PM</div></div></div>
     </div>
     <div class="btns">
       <button class="btn" style="flex:1" onclick="goTo('jc')">Job Card</button>
@@ -249,18 +272,25 @@ select.fi2{appearance:none}
 <!-- CLIENT VIEW -->
 <div class="scr" id="cv">
   <div class="sb">
-    <div style="padding:52px 20px 14px"><div style="font-size:20px;font-weight:800">Ahmed Al-Maamari</div></div>
+    <div style="padding:52px 20px 14px"><div style="font-size:20px;font-weight:800">Ahmed Al-Maamari</div><div style="font-size:12px;color:#6E6E73;margin-top:4px">BMW 530i - BKD 1234</div></div>
     <div style="padding:0 20px 16px;text-align:center">
       <div style="font-size:70px">&#x1F698;</div>
-      <div style="font-size:22px;font-weight:800;margin-top:12px">Car is being repaired</div>
-      <div style="font-size:12px;color:#6E6E73;margin-top:4px">BMW 530i - BKD 1234</div>
+      <div style="font-size:20px;font-weight:800;margin-top:12px">Car is being repaired</div>
+      <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,212,0,.12);border:1px solid #FFD400;border-radius:10px;padding:7px 14px;margin-top:14px;font-size:12px;font-weight:700;color:#FFD400">Delivery: Tomorrow 5:00 PM</div>
     </div>
-    <div style="margin:0 20px 14px;background:#1C1C1E;border-radius:16px;padding:16px;border:1px solid rgba(255,255,255,.07)">
+    <div class="cpb">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:11px">
-        <div style="font-size:13px;font-weight:700">Progress</div>
+        <div style="font-size:13px;font-weight:700">Repair Progress</div>
         <div style="font-size:24px;font-weight:900;color:#FFD400">35%</div>
       </div>
       <div style="height:7px;background:#3A3A3C;border-radius:4px;overflow:hidden"><div style="width:35%;height:100%;background:linear-gradient(90deg,#FFD400,#FF9F0A);border-radius:4px"></div></div>
+      <div style="display:flex;justify-content:space-between;margin-top:10px;font-size:9px;color:#6E6E73;font-weight:600">
+        <span>Received &#x2713;</span><span>Diagnosed &#x2713;</span><span style="color:#FFD400">Repair &#x25CF;</span><span>Delivery</span>
+      </div>
+    </div>
+    <div style="padding:0 20px;display:flex;flex-direction:column;gap:8px">
+      <div style="background:#1C1C1E;border-radius:10px;padding:12px;border:1px solid rgba(255,255,255,.07);display:flex;gap:10px"><div style="font-size:18px">&#x1F527;</div><div><div style="font-size:12px;font-weight:700">Oil leak repair started</div><div style="font-size:9px;color:#48484A;margin-top:3px">11:00 - In progress</div></div></div>
+      <div style="background:#1C1C1E;border-radius:10px;padding:12px;border:1px solid rgba(255,255,255,.07);display:flex;gap:10px"><div style="font-size:18px">&#x1F50D;</div><div><div style="font-size:12px;font-weight:700">Diagnostic complete</div><div style="font-size:9px;color:#48484A;margin-top:3px">10:15 Today</div></div></div>
     </div>
     <div class="btns">
       <button class="btn-s">Call Workshop</button>
@@ -280,15 +310,17 @@ select.fi2{appearance:none}
 <div class="scr" id="ai" style="flex-direction:column">
   <div style="padding:52px 20px 12px;display:flex;align-items:center;gap:12px;flex-shrink:0">
     <div class="bk" onclick="goTo('db')">&#x2190;</div>
-    <div><div style="font-size:17px;font-weight:800">AI Diagnostic</div><div style="font-size:10px;color:#6E6E73;margin-top:2px">Powered by Claude AI</div></div>
+    <div style="flex:1"><div style="font-size:17px;font-weight:800">AI Diagnostic</div><div style="font-size:10px;color:#6E6E73;margin-top:2px">Powered by Claude AI</div></div>
+    <div style="background:rgba(255,212,0,.12);border:1px solid #FFD400;color:#FFD400;padding:4px 10px;border-radius:6px;font-size:10px;font-weight:700">AI</div>
   </div>
   <div class="aichat" id="aiC">
-    <div class="aim bot"><div class="aib">Hello! I am the ALKARAJ AI Assistant. Ask me about any fault code or vehicle issue.</div></div>
+    <div class="aim bot"><div class="aib">Hello! I am the ALKARAJ AI. Ask me about any fault code like P0305, oil leaks, brakes, or any vehicle issue.</div><div style="font-size:9px;color:#48484A;margin-top:3px">Now</div></div>
   </div>
   <div style="padding:5px 20px 7px;display:flex;gap:7px;overflow-x:auto;flex-shrink:0">
     <div style="padding:7px 13px;background:#1C1C1E;border:1px solid rgba(255,255,255,.12);border-radius:20px;font-size:10px;font-weight:600;color:#6E6E73;white-space:nowrap;cursor:pointer" onclick="askAI(this)">What is P0305?</div>
     <div style="padding:7px 13px;background:#1C1C1E;border:1px solid rgba(255,255,255,.12);border-radius:20px;font-size:10px;font-weight:600;color:#6E6E73;white-space:nowrap;cursor:pointer" onclick="askAI(this)">P0128 thermostat</div>
-    <div style="padding:7px 13px;background:#1C1C1E;border:1px solid rgba(255,255,255,.12);border-radius:20px;font-size:10px;font-weight:600;color:#6E6E73;white-space:nowrap;cursor:pointer" onclick="askAI(this)">Oil leak causes</div>
+    <div style="padding:7px 13px;background:#1C1C1E;border:1px solid rgba(255,255,255,.12);border-radius:20px;font-size:10px;font-weight:600;color:#6E6E73;white-space:nowrap;cursor:pointer" onclick="askAI(this)">Oil leak BMW</div>
+    <div style="padding:7px 13px;background:#1C1C1E;border:1px solid rgba(255,255,255,.12);border-radius:20px;font-size:10px;font-weight:600;color:#6E6E73;white-space:nowrap;cursor:pointer" onclick="askAI(this)">Brake cost estimate</div>
   </div>
   <div class="aibar">
     <input class="aiin" id="aiIn" placeholder="Ask about any fault or vehicle..." onkeydown="if(event.key==='Enter'){sendAI()}"/>
@@ -301,15 +333,16 @@ select.fi2{appearance:none}
   <div class="sb">
     <div class="hdr">
       <div class="bk" onclick="goTo('db')">&#x2190;</div>
-      <div style="margin-left:8px"><div style="font-size:18px;font-weight:800">Reports</div></div>
+      <div style="margin-left:8px"><div style="font-size:18px;font-weight:800">Reports</div><div style="font-size:11px;color:#6E6E73">May 2025</div></div>
     </div>
-    <div style="padding:0 20px">
-      <div style="background:#1C1C1E;border-radius:16px;border:1px solid rgba(255,255,255,.07);overflow:hidden;margin-bottom:12px">
+    <div style="padding:0 20px;display:flex;flex-direction:column;gap:12px">
+      <div style="background:#1C1C1E;border-radius:16px;border:1px solid rgba(255,255,255,.07);overflow:hidden">
         <div style="padding:14px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.07)"><div style="font-size:13px;font-weight:700">Today Revenue</div><div style="font-size:22px;font-weight:900;color:#FFD400">285 OMR</div></div>
-        <div style="padding:12px 16px;display:flex;flex-direction:column;gap:7px">
-          <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.06)"><div style="font-size:11px;color:#6E6E73">Job Cards</div><div style="font-size:11px;font-weight:700">47</div></div>
-          <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.06)"><div style="font-size:11px;color:#6E6E73">Completed</div><div style="font-size:11px;font-weight:700;color:#30D158">44</div></div>
-          <div style="display:flex;justify-content:space-between;padding:7px 0"><div style="font-size:11px;color:#6E6E73">Rating</div><div style="font-size:11px;font-weight:700;color:#FFD400">4.8 / 5</div></div>
+        <div style="padding:12px 16px;display:flex;flex-direction:column;gap:6px">
+          <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.05)"><div style="font-size:11px;color:#6E6E73">Monthly Revenue</div><div style="font-size:11px;font-weight:700;color:#FFD400">3,240 OMR</div></div>
+          <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.05)"><div style="font-size:11px;color:#6E6E73">Job Cards</div><div style="font-size:11px;font-weight:700">47</div></div>
+          <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.05)"><div style="font-size:11px;color:#6E6E73">Completed</div><div style="font-size:11px;font-weight:700;color:#30D158">44</div></div>
+          <div style="display:flex;justify-content:space-between;padding:6px 0"><div style="font-size:11px;color:#6E6E73">Rating</div><div style="font-size:11px;font-weight:700;color:#FFD400">4.8 / 5 &#x2B50;</div></div>
         </div>
       </div>
     </div>
@@ -325,18 +358,21 @@ select.fi2{appearance:none}
 
 <script>
 var jcSt=1, selI=[], sigInit=false;
-var jcD={name:"",phone:"",make:"BMW",model:"530i",year:"2020",plate:"",fault:""};
-var aiIdx=0;
+var jcD={name:"",phone:"",whatsapp:"",dob:"",address:"",callTime:"",make:"BMW",model:"530i",year:"2020",color:"White",plate:"",chassis:"",odo:"",fault:"",delivery:"",notes:""};
 
 var SVCS=[
-  {g:"Diagnostics",items:[{c:"D1",n:"Computer Diagnostic",p:10},{c:"D2",n:"Gateway Scan",p:60}]},
-  {g:"Programming",items:[{c:"P1",n:"ECU Programming",p:380},{c:"P2",n:"Key Programming",p:120}]},
-  {g:"Electrical",items:[{c:"E1",n:"Wiring Check",p:90},{c:"E2",n:"Wiring Repair",p:180}]},
-  {g:"Mechanical",items:[{c:"M1",n:"Oil Change",p:25},{c:"M2",n:"Brake Pads",p:45},{c:"M3",n:"AC Recharge",p:35}]}
+  {g:"Diagnostics",items:[{c:"D1",n:"Computer Diagnostic",p:10},{c:"D2",n:"Gateway Diagnostic",p:60},{c:"D3",n:"Agency Device",p:45},{c:"D4",n:"Online Agency",p:60},{c:"D5",n:"Electrical Check",p:90},{c:"D6",n:"Battery Check",p:35},{c:"D7",n:"Pre-purchase Check",p:75}]},
+  {g:"Programming",items:[{c:"P1",n:"BMW Programming",p:380},{c:"P2",n:"VW Group",p:180},{c:"P3",n:"Porsche",p:380},{c:"P4",n:"Japanese Cars",p:240},{c:"P5",n:"American Cars",p:380},{c:"P6",n:"Key Programming",p:120},{c:"P7",n:"ECU Clone",p:280}]},
+  {g:"Electrical",items:[{c:"E1",n:"Wiring Check",p:90},{c:"E2",n:"Wiring Repair",p:180},{c:"E3",n:"Smoke Leak Test",p:75},{c:"E4",n:"Dashboard R+R",p:460},{c:"E5",n:"Lighting Repair",p:80}]},
+  {g:"ADAS",items:[{c:"A1",n:"ADAS Calibration",p:155},{c:"A2",n:"Airbag ECU Reset",p:325},{c:"A3",n:"Radar Calibration",p:200},{c:"A4",n:"Camera Calibration",p:180}]},
+  {g:"Mechanical",items:[{c:"M1",n:"Oil Change",p:25},{c:"M2",n:"Brake Pads Front",p:45},{c:"M3",n:"Brake Pads Rear",p:40},{c:"M4",n:"Brake Fluid Flush",p:35},{c:"M5",n:"AC Recharge",p:35},{c:"M6",n:"AC Service",p:80}]},
+  {g:"Reports",items:[{c:"R1",n:"Diagnostic Report",p:10},{c:"R2",n:"Report with Steps",p:15},{c:"R3",n:"Full Report",p:20}]},
+  {g:"Other",items:[{c:"O1",n:"Road Test 20km",p:35},{c:"O2",n:"Consultation",p:15},{c:"O3",n:"Parking per day",p:48},{c:"O4",n:"Wash & Clean",p:20}]}
 ];
 
-var STEPS=["Client","Phone","Vehicle","Photos","Fault","Delivery","Services","Total","Signature","Summary"];
-var MAKES=["BMW","Mercedes","Toyota","Lexus","Nissan","Audi","Porsche","VW","Ford","Chevrolet","Land Rover","Hyundai","Kia","Honda"];
+var MAKES=["BMW","Mercedes","Toyota","Lexus","Nissan","Audi","Porsche","Volkswagen","Ford","Chevrolet","Land Rover","Hyundai","Kia","Honda","Infiniti","Cadillac","GMC","Jeep","Dodge","Mazda","Subaru","Mitsubishi","Rolls-Royce","Bentley","Lamborghini","Ferrari","Maserati","Jaguar"];
+
+var STEPS=["Client","Phone","WhatsApp","Birthday","Address","Call Time","Photos","Car Info","Fault","Delivery","Services","Total","Signature","Summary"];
 
 function goTo(id){
   var a=document.querySelectorAll(".scr");
@@ -357,22 +393,26 @@ function selRole(el){
 }
 function tick(){
   var n=new Date(),h=n.getHours();
-  var cl=document.getElementById("clk");
-  if(cl) cl.textContent=String(h).padStart(2,"0")+":"+String(n.getMinutes()).padStart(2,"0");
-  var gh=document.getElementById("gH");
+  var cl=document.getElementById("clk"); if(cl) cl.textContent=String(h).padStart(2,"0")+":"+String(n.getMinutes()).padStart(2,"0");
+  var gh=document.getElementById("gH"),ga=document.getElementById("gA");
   if(gh){
-    if(h<12) gh.textContent="Good Morning";
-    else if(h<17) gh.textContent="Good Afternoon";
-    else gh.textContent="Good Evening";
+    if(h<12){gh.textContent="Good Morning";if(ga)ga.innerHTML="&#x635;&#x628;&#x627;&#x62D; &#x627;&#x644;&#x62E;&#x64A;&#x631;";}
+    else if(h<17){gh.textContent="Good Afternoon";if(ga)ga.innerHTML="&#x645;&#x633;&#x627;&#x621; &#x627;&#x644;&#x62E;&#x64A;&#x631;";}
+    else{gh.textContent="Good Evening";if(ga)ga.innerHTML="&#x645;&#x633;&#x627;&#x621; &#x627;&#x644;&#x646;&#x648;&#x631;";}
   }
 }
 tick(); setInterval(tick,30000);
+
 function openCar(model,plate,client,pct,st){
   document.getElementById("cT").textContent=model;
   document.getElementById("cS").textContent=plate+" - "+client;
   goTo("cd");
 }
+
+/* ====== JOB CARD ====== */
 function renderJC(){
+  var jN="JC-"+new Date().getFullYear()+"-"+String(Math.floor(Math.random()*9000)+1000);
+  var el=document.getElementById("jcN"); if(el) el.textContent=jN;
   var h="";
   for(var i=0;i<STEPS.length;i++){
     var cls=i+1<jcSt?"d":(i+1===jcSt?"a":"p");
@@ -383,8 +423,9 @@ function renderJC(){
   document.getElementById("stB").innerHTML=h;
   renderStep(jcSt);
 }
-function nextS(){if(jcSt<10){jcSt++;renderJC();}else{jcSt=1;selI=[];goTo("db");}}
+function nextS(){if(jcSt<STEPS.length){jcSt++;renderJC();}else{jcSt=1;selI=[];goTo("db");}}
 function prevS(){if(jcSt>1){jcSt--;renderJC();}else goTo("db");}
+
 function nb(b,n){
   b=b||"Back"; n=n||"Next";
   var d=document.createElement("div"); d.className="btns";
@@ -395,61 +436,158 @@ function nb(b,n){
 function mkInp(type,ph,val,fn){
   var i=document.createElement("input"); i.className="fi2"; i.type=type||"text";
   i.placeholder=ph||""; i.value=val||"";
+  if(type==="date"||type==="number"||type==="tel") i.dir="ltr";
   if(fn) i.addEventListener("input",fn); return i;
 }
-function renderStep(s){
-  var bd=document.getElementById("jcBd"); bd.innerHTML=""; bd.scrollTop=0;
-  var w=document.createElement("div");
-  if(s===1){
-    var sec=makeSec("Client Name"); var inp=mkInp("text","Full name",jcD.name,function(){jcD.name=this.value;}); sec.appendChild(inp); w.appendChild(sec); w.appendChild(nb("Cancel","Next"));
-  } else if(s===2){
-    var sec=makeSec("Mobile"); var inp=mkInp("tel","+968 XXXX XXXX",jcD.phone,function(){jcD.phone=this.value;}); inp.dir="ltr"; sec.appendChild(inp); w.appendChild(sec); w.appendChild(nb());
-  } else if(s===3){
-    var sec=makeSec("Vehicle Info");
-    var row=document.createElement("div"); row.className="frow";
-    var sel=document.createElement("select"); sel.className="fi2";
-    for(var i=0;i<MAKES.length;i++){var o=document.createElement("option");o.textContent=MAKES[i];if(MAKES[i]===jcD.make)o.selected=true;sel.appendChild(o);}
-    sel.addEventListener("change",function(){jcD.make=this.value;});
-    var inpM=mkInp("text","Model",jcD.model,function(){jcD.model=this.value;});
-    row.appendChild(makeField("Make",sel)); row.appendChild(makeField("Model",inpM));
-    sec.appendChild(row); w.appendChild(sec); w.appendChild(nb());
-  } else if(s===4){
-    var sec=makeSec("Vehicle Photos");
-    var grid=document.createElement("div"); grid.style.cssText="display:grid;grid-template-columns:1fr 1fr;gap:10px";
-    ["Front","Rear","Right","Left"].forEach(function(label){
-      var slot=document.createElement("div"); slot.style.cssText="position:relative;aspect-ratio:16/9;background:#2C2C2E;border-radius:10px;border:1.5px dashed rgba(255,255,255,.12);overflow:hidden";
-      var img=document.createElement("img"); img.style.cssText="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none";
-      var lbl=document.createElement("div"); lbl.style.cssText="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:#6E6E73"; lbl.textContent="&#x1F4F7; "+label;
-      var inp=document.createElement("input"); inp.type="file"; inp.accept="image/*"; inp.setAttribute("capture","environment"); inp.style.cssText="position:absolute;inset:0;opacity:0;cursor:pointer;z-index:2";
-      inp.addEventListener("change",function(){var f=this.files&&this.files[0];if(!f)return;var fr=new FileReader();fr.onload=function(e){img.src=e.target.result;img.style.display="block";lbl.style.display="none";slot.style.borderColor="#30D158";};fr.readAsDataURL(f);});
-      slot.appendChild(img); slot.appendChild(lbl); slot.appendChild(inp); grid.appendChild(slot);
-    });
-    sec.appendChild(grid); w.appendChild(sec); w.appendChild(nb());
-  } else if(s===5){
-    var sec=makeSec("Fault Description");
-    var ta=document.createElement("textarea"); ta.className="fi2"; ta.rows=4; ta.style.cssText="resize:none;width:100%"; ta.placeholder="Describe the fault..."; ta.value=jcD.fault; ta.addEventListener("input",function(){jcD.fault=this.value;});
-    sec.appendChild(ta); w.appendChild(sec); w.appendChild(nb());
-  } else if(s===6){
-    var sec=makeSec("Delivery Date");
-    var inp=mkInp("date","","",function(){jcD.dl=this.value;}); inp.dir="ltr";
-    sec.appendChild(inp); w.appendChild(sec); w.appendChild(nb());
-  } else if(s===7){ buildSvcs(w); }
-  else if(s===8){ buildTotal(w); }
-  else if(s===9){ buildSig(w); }
-  else if(s===10){ buildSum(w); }
-  bd.appendChild(w);
-}
-function makeSec(title){
-  var frm=document.createElement("div"); frm.className="frm"; frm.style.paddingBottom="0";
-  var sec=document.createElement("div"); sec.className="fsec";
+function mkSec(title){
+  var f=document.createElement("div"); f.className="frm"; f.style.paddingBottom="0";
+  var s=document.createElement("div"); s.className="fsec";
   var t=document.createElement("div"); t.className="fsec-t"; t.textContent=title;
-  sec.appendChild(t); frm.appendChild(sec); return sec;
+  s.appendChild(t); f.appendChild(s); f.sec=s; return f;
 }
-function makeField(lbl,el){
+function mkField(lbl,el){
   var d=document.createElement("div"); d.className="ff";
   var l=document.createElement("div"); l.className="fl"; l.textContent=lbl;
   d.appendChild(l); d.appendChild(el); return d;
 }
+function mkRow(){var d=document.createElement("div");d.className="frow";return d;}
+
+function renderStep(s){
+  var bd=document.getElementById("jcBd"); bd.innerHTML=""; bd.scrollTop=0;
+  var w=document.createElement("div");
+
+  if(s===1){
+    var sec=mkSec("Client Name"); var inp=mkInp("text","Full name",jcD.name,function(){jcD.name=this.value;}); sec.sec.appendChild(inp); w.appendChild(sec); w.appendChild(nb("Cancel","Next"));
+  }
+  else if(s===2){
+    var sec=mkSec("Mobile Number"); var inp=mkInp("tel","+968 XXXX XXXX",jcD.phone,function(){jcD.phone=this.value;}); sec.sec.appendChild(inp); w.appendChild(sec); w.appendChild(nb());
+  }
+  else if(s===3){
+    var sec=mkSec("WhatsApp");
+    var inp=mkInp("tel","+968 XXXX XXXX",jcD.whatsapp,function(){jcD.whatsapp=this.value;});
+    var chk=document.createElement("label"); chk.style.cssText="display:flex;align-items:center;gap:8px;margin-top:12px;cursor:pointer;font-size:13px;color:#6E6E73";
+    var cb=document.createElement("input"); cb.type="checkbox"; cb.style.cssText="accent-color:#FFD400;width:16px;height:16px";
+    cb.addEventListener("change",function(){if(this.checked){jcD.whatsapp=jcD.phone;inp.value=jcD.phone;}});
+    chk.appendChild(cb); chk.appendChild(document.createTextNode(" Same as mobile"));
+    sec.sec.appendChild(inp); sec.sec.appendChild(chk); w.appendChild(sec); w.appendChild(nb());
+  }
+  else if(s===4){
+    var sec=mkSec("Date of Birth (Optional)"); var inp=mkInp("date","",jcD.dob,function(){jcD.dob=this.value;}); sec.sec.appendChild(inp); w.appendChild(sec); w.appendChild(nb());
+  }
+  else if(s===5){
+    var sec=mkSec("Address"); var inp=mkInp("text","City / Area",jcD.address,function(){jcD.address=this.value;}); sec.sec.appendChild(inp); w.appendChild(sec); w.appendChild(nb());
+  }
+  else if(s===6){
+    var sec=mkSec("Best Time to Call");
+    var grid=document.createElement("div"); grid.style.cssText="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px";
+    ["Morning 8-11","Noon 11-2","Afternoon 2-5","Evening 5-8","Anytime"].forEach(function(t){
+      var btn=document.createElement("div"); btn.style.cssText="padding:12px;border-radius:10px;border:1.5px solid rgba(255,255,255,.12);background:#2C2C2E;color:#6E6E73;font-size:12px;font-weight:600;text-align:center;cursor:pointer";
+      btn.textContent=t;
+      if(jcD.callTime===t){btn.style.borderColor="#FFD400";btn.style.color="#FFD400";btn.style.background="rgba(255,212,0,.1)";}
+      btn.addEventListener("click",function(){
+        jcD.callTime=t;
+        grid.querySelectorAll("div").forEach(function(b){b.style.borderColor="rgba(255,255,255,.12)";b.style.color="#6E6E73";b.style.background="#2C2C2E";});
+        btn.style.borderColor="#FFD400"; btn.style.color="#FFD400"; btn.style.background="rgba(255,212,0,.1)";
+      });
+      grid.appendChild(btn);
+    });
+    sec.sec.appendChild(grid); w.appendChild(sec); w.appendChild(nb());
+  }
+  else if(s===7){
+    var sec=mkSec("Vehicle Photos");
+    var grid=document.createElement("div"); grid.style.cssText="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px";
+    [{k:"front",l:"Front",i:"&#x2B06;&#xFE0F;"},{k:"rear",l:"Back",i:"&#x2B07;&#xFE0F;"},{k:"right",l:"Right",i:"&#x27A1;&#xFE0F;"},{k:"left",l:"Left",i:"&#x2B05;&#xFE0F;"},{k:"odo",l:"Odometer",i:"&#x1F522;"},{k:"chassis",l:"Chassis",i:"&#x1F3F7;&#xFE0F;"}].forEach(function(slot){
+      var wrap=document.createElement("div"); wrap.style.cssText="position:relative;aspect-ratio:1;background:#2C2C2E;border-radius:10px;border:1.5px dashed rgba(255,255,255,.15);overflow:hidden;cursor:pointer";
+      var img=document.createElement("img"); img.style.cssText="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none";
+      var lbl=document.createElement("div"); lbl.style.cssText="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:9px;font-weight:600;color:#6E6E73;pointer-events:none";
+      lbl.innerHTML="<span style='font-size:20px'>"+slot.i+"</span>"+slot.l;
+      var inp=document.createElement("input"); inp.type="file"; inp.accept="image/*"; inp.setAttribute("capture","environment"); inp.style.cssText="position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;z-index:2";
+      (function(k,im,lb){
+        inp.addEventListener("change",function(){var f=this.files&&this.files[0];if(!f)return;var fr=new FileReader();fr.onload=function(e){im.src=e.target.result;im.style.display="block";lb.style.display="none";wrap.style.borderColor="#30D158";};fr.readAsDataURL(f);});
+      })(slot.k,img,lbl);
+      wrap.appendChild(img); wrap.appendChild(lbl); wrap.appendChild(inp); grid.appendChild(wrap);
+    });
+    var vidBtn=document.createElement("div"); vidBtn.style.cssText="margin-top:8px;position:relative;background:#2C2C2E;border-radius:10px;border:1.5px dashed rgba(255,255,255,.12);padding:14px;text-align:center;overflow:hidden;cursor:pointer";
+    vidBtn.innerHTML="<div style='font-size:22px'>&#x1F4F9;</div><div style='font-size:10px;font-weight:600;color:#6E6E73;margin-top:4px'>Record Video</div>";
+    var vidInp=document.createElement("input"); vidInp.type="file"; vidInp.accept="video/*"; vidInp.setAttribute("capture","environment"); vidInp.style.cssText="position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%";
+    vidInp.addEventListener("change",function(){if(this.files&&this.files[0]){vidBtn.innerHTML="<div style='font-size:22px'>&#x2705;</div><div style='font-size:10px;font-weight:600;color:#30D158;margin-top:4px'>Video Captured</div>";vidBtn.style.borderColor="#30D158";}});
+    vidBtn.appendChild(vidInp);
+    sec.sec.appendChild(grid); sec.sec.appendChild(vidBtn); w.appendChild(sec); w.appendChild(nb());
+  }
+  else if(s===8){
+    var sec=mkSec("Vehicle Information");
+    var selMake=document.createElement("select"); selMake.className="fi2";
+    MAKES.forEach(function(m){var o=document.createElement("option");o.value=m;o.textContent=m;if(m===jcD.make)o.selected=true;selMake.appendChild(o);});
+    selMake.addEventListener("change",function(){jcD.make=this.value;});
+    var row1=mkRow();
+    var inpModel=mkInp("text","Model",jcD.model,function(){jcD.model=this.value;});
+    row1.appendChild(mkField("Make",selMake)); row1.appendChild(mkField("Model",inpModel));
+    var row2=mkRow(); row2.style.marginTop="10px";
+    var inpYear=mkInp("number","Year",jcD.year,function(){jcD.year=this.value;});
+    var inpColor=mkInp("text","Color",jcD.color,function(){jcD.color=this.value;});
+    row2.appendChild(mkField("Year",inpYear)); row2.appendChild(mkField("Color",inpColor));
+    var row3=mkRow(); row3.style.marginTop="10px";
+    var inpPlate=mkInp("text","Plate No.",jcD.plate,function(){jcD.plate=this.value;});
+    var inpChassis=mkInp("text","Chassis/VIN",jcD.chassis,function(){jcD.chassis=this.value;});
+    row3.appendChild(mkField("Plate",inpPlate)); row3.appendChild(mkField("Chassis",inpChassis));
+    var row4=mkRow(); row4.style.marginTop="10px";
+    var inpOdo=mkInp("number","km",jcD.odo,function(){jcD.odo=this.value;});
+    row4.appendChild(mkField("Odometer (km)",inpOdo)); row4.appendChild(document.createElement("div"));
+    sec.sec.appendChild(row1); sec.sec.appendChild(row2); sec.sec.appendChild(row3); sec.sec.appendChild(row4);
+    w.appendChild(sec); w.appendChild(nb());
+  }
+  else if(s===9){
+    var sec=mkSec("Fault Description");
+    var ta=document.createElement("textarea"); ta.className="fi2"; ta.rows=4; ta.style.cssText="resize:none;width:100%"; ta.placeholder="Describe the fault in detail..."; ta.value=jcD.fault; ta.addEventListener("input",function(){jcD.fault=this.value;});
+    var voiceBtn=document.createElement("div"); voiceBtn.style.cssText="margin-top:10px;background:#2C2C2E;border-radius:10px;padding:14px;display:flex;align-items:center;gap:12px;cursor:pointer;border:1.5px dashed rgba(255,255,255,.12)";
+    voiceBtn.innerHTML="<span style='font-size:24px'>&#x1F3A4;</span><div><div style='font-size:13px;font-weight:600'>Voice Note</div><div style='font-size:10px;color:#6E6E73;margin-top:2px'>Record customer complaint</div></div><span style='margin-left:auto;background:rgba(255,212,0,.12);color:#FFD400;border:1px solid #FFD400;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700'>REC</span>";
+    voiceBtn.addEventListener("click",function(){startVoice(this);});
+    sec.sec.appendChild(ta); sec.sec.appendChild(voiceBtn); w.appendChild(sec); w.appendChild(nb());
+  }
+  else if(s===10){
+    var sec=mkSec("Delivery Date");
+    var inp=mkInp("date","",jcD.delivery,function(){jcD.delivery=this.value;});
+    var qGrid=document.createElement("div"); qGrid.style.cssText="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:12px";
+    var today=new Date();
+    [{l:"Today",d:0},{l:"Tomorrow",d:1},{l:"In 2 Days",d:2},{l:"In 3 Days",d:3},{l:"1 Week",d:7},{l:"2 Weeks",d:14}].forEach(function(opt){
+      var dd=new Date(today); dd.setDate(dd.getDate()+opt.d);
+      var ds=dd.toISOString().split("T")[0];
+      var btn=document.createElement("div"); btn.style.cssText="padding:10px;border-radius:10px;border:1.5px solid rgba(255,255,255,.12);background:#2C2C2E;color:#6E6E73;font-size:11px;font-weight:600;text-align:center;cursor:pointer";
+      btn.textContent=opt.l;
+      btn.addEventListener("click",function(){
+        jcD.delivery=ds; inp.value=ds;
+        qGrid.querySelectorAll("div").forEach(function(b){b.style.borderColor="rgba(255,255,255,.12)";b.style.color="#6E6E73";b.style.background="#2C2C2E";});
+        btn.style.borderColor="#FFD400"; btn.style.color="#FFD400"; btn.style.background="rgba(255,212,0,.1)";
+      });
+      qGrid.appendChild(btn);
+    });
+    sec.sec.appendChild(inp); sec.sec.appendChild(qGrid); w.appendChild(sec); w.appendChild(nb());
+  }
+  else if(s===11){ buildSvcs(w); }
+  else if(s===12){ buildTotal(w); }
+  else if(s===13){ buildSig(w); }
+  else if(s===14){ buildSum(w); }
+  bd.appendChild(w);
+}
+
+/* Voice recording */
+var mediaRec=null, audioChunks=[];
+function startVoice(btn){
+  if(!navigator.mediaDevices){alert("Voice not supported");return;}
+  if(mediaRec&&mediaRec.state==="recording"){mediaRec.stop();return;}
+  navigator.mediaDevices.getUserMedia({audio:true}).then(function(stream){
+    mediaRec=new MediaRecorder(stream); audioChunks=[];
+    mediaRec.addEventListener("dataavailable",function(e){audioChunks.push(e.data);});
+    mediaRec.addEventListener("stop",function(){
+      stream.getTracks().forEach(function(t){t.stop();});
+      btn.innerHTML="<span style='font-size:24px'>&#x2705;</span><div><div style='font-size:13px;font-weight:600;color:#30D158'>Recorded</div><div style='font-size:10px;color:#6E6E73;margin-top:2px'>Tap to listen</div></div>";
+    });
+    mediaRec.start();
+    btn.querySelector("span:last-child").textContent="STOP"; btn.querySelector("span:last-child").style.color="#FF3B30"; btn.querySelector("span:last-child").style.borderColor="#FF3B30";
+  }).catch(function(){alert("Please allow microphone access");});
+}
+
+/* Services */
 function buildSvcs(wrap){
   var outer=document.createElement("div"); outer.style.padding="0 20px";
   var tabBar=document.createElement("div"); tabBar.className="stabs";
@@ -464,81 +602,119 @@ function buildSvcs(wrap){
     });
     grp.items.forEach(function(item){
       var si=document.createElement("div"); si.className="si";
-      var isSel=selI.some(function(x){return x.c===item.c;});
-      if(isSel) si.classList.add("on");
-      var ck=document.createElement("div"); ck.className="si-ck"; if(isSel) ck.textContent="&#x2713;";
+      var isSel=selI.some(function(x){return x.c===item.c;}); if(isSel) si.classList.add("on");
+      var ck=document.createElement("div"); ck.className="si-ck"; if(isSel) ck.textContent="v";
       var nm=document.createElement("div"); nm.style.cssText="flex:1;font-size:12px;font-weight:600"; nm.textContent=item.n;
       var pr=document.createElement("div"); pr.className="si-pr"; pr.textContent=item.p+" OMR";
       si.appendChild(ck); si.appendChild(nm); si.appendChild(pr);
       si.addEventListener("click",function(){
         var idx=-1; for(var k=0;k<selI.length;k++){if(selI[k].c===item.c){idx=k;break;}}
         if(idx>=0){selI.splice(idx,1);si.classList.remove("on");ck.textContent="";}
-        else{selI.push({c:item.c,n:item.n,p:item.p});si.classList.add("on");ck.textContent="&#x2713;";}
+        else{selI.push({c:item.c,n:item.n,p:item.p});si.classList.add("on");ck.textContent="v";}
+        refreshSel(selSum);
       });
       list.appendChild(si);
     });
     tabBar.appendChild(tab); outer.appendChild(list);
   });
-  outer.insertBefore(tabBar,outer.firstChild); wrap.appendChild(outer); wrap.appendChild(nb());
+  outer.insertBefore(tabBar,outer.firstChild);
+  var selSum=document.createElement("div"); refreshSel(selSum); outer.appendChild(selSum);
+  wrap.appendChild(outer); wrap.appendChild(nb());
 }
+function refreshSel(el){
+  if(!el)return;
+  if(selI.length===0){el.innerHTML="";return;}
+  var h="<div style='margin-top:10px;background:rgba(255,212,0,.1);border:1px solid #FFD400;border-radius:10px;padding:12px'><div style='font-size:11px;font-weight:700;color:#FFD400;margin-bottom:8px'>Selected ("+selI.length+")</div>";
+  selI.forEach(function(x){h+="<div style='display:flex;justify-content:space-between;font-size:11px;padding:4px 0'><span>"+x.n+"</span><span style='color:#FFD400'>"+x.p+" OMR</span></div>";});
+  h+="</div>"; el.innerHTML=h;
+}
+
+/* Total */
 function buildTotal(wrap){
   var tot=0; selI.forEach(function(x){tot+=x.p;});
   var outer=document.createElement("div"); outer.style.cssText="padding:0 20px;display:flex;flex-direction:column;gap:10px";
+  if(selI.length===0){var e=document.createElement("div");e.style.cssText="text-align:center;padding:24px;color:#6E6E73;font-size:13px";e.textContent="No services added";outer.appendChild(e);}
   selI.forEach(function(item){
-    var row=document.createElement("div"); row.className="irow"; row.style.cssText="display:flex;align-items:center;justify-content:space-between";
-    var nm=document.createElement("div"); nm.style.cssText="font-size:12px;font-weight:600;flex:1"; nm.textContent=item.n;
+    var row=document.createElement("div"); row.className="irow"; row.style.cssText="display:flex;align-items:center;justify-content:space-between;padding:10px 12px";
+    var left=document.createElement("div"); left.style.flex="1"; left.style.fontSize="12px"; left.style.fontWeight="600"; left.textContent=item.n;
     var right=document.createElement("div"); right.style.cssText="display:flex;align-items:center;gap:10px";
     var pr=document.createElement("div"); pr.style.cssText="font-size:12px;color:#FFD400;font-weight:700"; pr.textContent=item.p+" OMR";
-    var del=document.createElement("div"); del.style.cssText="color:#FF3B30;font-size:18px;cursor:pointer;padding:4px"; del.textContent="x";
+    var del=document.createElement("div"); del.style.cssText="color:#FF3B30;font-size:18px;cursor:pointer;padding:4px;font-weight:700"; del.textContent="x";
     (function(code){del.addEventListener("click",function(){selI=selI.filter(function(x){return x.c!==code;});renderStep(jcSt);});})(item.c);
-    right.appendChild(pr); right.appendChild(del); row.appendChild(nm); row.appendChild(right); outer.appendChild(row);
+    right.appendChild(pr); right.appendChild(del); row.appendChild(left); row.appendChild(right); outer.appendChild(row);
   });
-  if(selI.length===0){var e=document.createElement("div");e.style.cssText="text-align:center;padding:24px;color:#6E6E73;font-size:13px";e.textContent="No services added";outer.appendChild(e);}
   var totBar=document.createElement("div"); totBar.className="totbar";
   var lbl=document.createElement("div"); lbl.style.cssText="font-size:13px;font-weight:700"; lbl.textContent="Total";
   var val=document.createElement("div"); val.className="totva"; val.textContent=tot.toFixed(3)+" OMR";
-  totBar.appendChild(lbl); totBar.appendChild(val); outer.appendChild(totBar); wrap.appendChild(outer); wrap.appendChild(nb());
+  totBar.appendChild(lbl); totBar.appendChild(val); outer.appendChild(totBar);
+  var notesLabel=document.createElement("div"); notesLabel.className="fl"; notesLabel.style.marginBottom="6px"; notesLabel.textContent="Notes";
+  var ta=document.createElement("textarea"); ta.className="fi2"; ta.rows=2; ta.style.cssText="resize:none;width:100%"; ta.placeholder="Additional notes..."; ta.value=jcD.notes; ta.addEventListener("input",function(){jcD.notes=this.value;});
+  outer.appendChild(notesLabel); outer.appendChild(ta);
+  wrap.appendChild(outer); wrap.appendChild(nb());
 }
+
+/* Signature */
 function buildSig(wrap){
   var outer=document.createElement("div"); outer.style.cssText="padding:0 20px;display:flex;flex-direction:column;gap:12px";
-  var sec=document.createElement("div"); sec.className="fsec";
-  var t=document.createElement("div"); t.className="fsec-t"; t.textContent="Client Signature";
+  var terms=document.createElement("div"); terms.style.cssText="background:#2C2C2E;border-radius:12px;padding:14px;border:1px solid rgba(255,255,255,.08);max-height:160px;overflow-y:auto";
+  var termsT=document.createElement("div"); termsT.style.cssText="font-size:11px;font-weight:700;color:#FFD400;margin-bottom:8px"; termsT.textContent="Terms and Conditions";
+  var termsC=document.createElement("div"); termsC.style.cssText="font-size:10px;color:#6E6E73;line-height:1.6";
+  termsC.innerHTML="1. Diagnostic fee is non-refundable.<br/>2. Customer authorizes all listed work.<br/>3. Workshop not liable for pre-existing damage.<br/>4. Full payment required on collection.<br/>5. 30-day warranty on labor.";
+  terms.appendChild(termsT); terms.appendChild(termsC);
+  var sigSec=document.createElement("div"); sigSec.className="fsec";
+  var sigT=document.createElement("div"); sigT.className="fsec-t"; sigT.textContent="Client Signature";
   var canvas=document.createElement("canvas"); canvas.className="sigc"; canvas.id="sigC";
-  var clr=document.createElement("button"); clr.style.cssText="margin-top:8px;width:100%;padding:10px;background:#2C2C2E;border:1px solid rgba(255,255,255,.12);border-radius:8px;color:#6E6E73;font-size:12px;cursor:pointer"; clr.textContent="Clear";
+  var clr=document.createElement("button"); clr.style.cssText="margin-top:8px;width:100%;padding:10px;background:#2C2C2E;border:1px solid rgba(255,255,255,.12);border-radius:8px;color:#6E6E73;font-size:12px;cursor:pointer"; clr.textContent="Clear Signature";
   clr.addEventListener("click",function(){var c=document.getElementById("sigC");if(c){c.getContext("2d").clearRect(0,0,c.width,c.height);sigInit=false;setTimeout(initSig,100);}});
-  sec.appendChild(t); sec.appendChild(canvas); sec.appendChild(clr); outer.appendChild(sec); wrap.appendChild(outer);
+  sigSec.appendChild(sigT); sigSec.appendChild(canvas); sigSec.appendChild(clr);
+  var sendSec=document.createElement("div"); sendSec.className="fsec";
+  var sendT=document.createElement("div"); sendT.className="fsec-t"; sendT.textContent="Send Job Card";
+  var sendGrid=document.createElement("div"); sendGrid.style.cssText="display:grid;grid-template-columns:1fr 1fr;gap:8px";
+  [["&#x1F4F1;","WhatsApp"],["&#x1F5A8;","Print"],["&#x1F4E7;","Email"],["&#x1F517;","Share"]].forEach(function(item){
+    var b=document.createElement("div"); b.className="qa"; b.style.padding="12px";
+    b.innerHTML="<div class='qa-i'>"+item[0]+"</div><div class='qa-l'>"+item[1]+"</div>";
+    sendGrid.appendChild(b);
+  });
+  sendSec.appendChild(sendT); sendSec.appendChild(sendGrid);
+  outer.appendChild(terms); outer.appendChild(sigSec); outer.appendChild(sendSec); wrap.appendChild(outer);
   var btns=document.createElement("div"); btns.className="btns";
   var b1=document.createElement("button"); b1.className="btn-s"; b1.textContent="Back"; b1.addEventListener("click",prevS);
   var b2=document.createElement("button"); b2.className="btn"; b2.style.flex="2"; b2.textContent="Create Job Card"; b2.addEventListener("click",nextS);
   btns.appendChild(b1); btns.appendChild(b2); wrap.appendChild(btns); setTimeout(initSig,200);
 }
+
+/* Summary */
 function buildSum(wrap){
   var tot=0; selI.forEach(function(x){tot+=x.p;});
   var jN="JC-"+new Date().getFullYear()+"-"+String(Math.floor(Math.random()*9000)+1000);
   var d=document.createElement("div"); d.style.padding="0 20px";
-  var hero=document.createElement("div"); hero.style.cssText="text-align:center;padding:20px 0";
+  var hero=document.createElement("div"); hero.style.cssText="text-align:center;padding:20px 0 14px";
   hero.innerHTML="<div style='font-size:52px'>&#x2705;</div><div style='font-size:18px;font-weight:800;margin-top:12px'>Job Card Created!</div><div style='font-size:13px;color:#FFD400;margin-top:6px;font-weight:700'>"+jN+"</div>";
   d.appendChild(hero);
   var card=document.createElement("div"); card.style.cssText="background:#1C1C1E;border-radius:16px;border:1px solid rgba(255,255,255,.07);overflow:hidden";
   var hdr=document.createElement("div"); hdr.style.cssText="background:#FFD400;padding:14px 16px;display:flex;align-items:center;gap:12px";
-  var lg=document.createElement("div"); lg.style.cssText="width:36px;height:36px;border-radius:9px;overflow:hidden;flex-shrink:0";
+  var lg=document.createElement("div"); lg.style.cssText="width:44px;height:44px;border-radius:10px;overflow:hidden;flex-shrink:0";
   var lgi=document.createElement("img"); lgi.style.cssText="width:100%;height:100%;object-fit:cover";
-  var al=document.getElementById("appLogo"); if(al) lgi.src=al.src;
-  lg.appendChild(lgi);
+  var al=document.getElementById("appLogo"); if(al) lgi.src=al.src; lg.appendChild(lgi);
   var wi=document.createElement("div"); wi.innerHTML="<div style='font-size:14px;font-weight:800;color:#0B0B0B'>Al Waqia Reality Business</div><div style='font-size:10px;color:rgba(0,0,0,.55)'>"+jN+"</div>";
   hdr.appendChild(lg); hdr.appendChild(wi); card.appendChild(hdr);
   var body=document.createElement("div"); body.style.padding="14px 16px";
-  function addRow(k,v){var r=document.createElement("div");r.style.cssText="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.06)";r.innerHTML="<div style='font-size:11px;color:#6E6E73'>"+k+"</div><div style='font-size:11px;font-weight:700'>"+v+"</div>";body.appendChild(r);}
-  addRow("Client",jcD.name||"--"); addRow("Phone",jcD.phone||"--"); addRow("Vehicle",jcD.make+" "+jcD.model+" "+jcD.year); addRow("Plate",jcD.plate||"--");
-  var totRow=document.createElement("div"); totRow.style.cssText="display:flex;justify-content:space-between;padding:10px 0";
-  totRow.innerHTML="<div style='font-size:13px;font-weight:700'>Total</div><div style='font-size:20px;font-weight:900;color:#FFD400'>"+tot.toFixed(3)+" OMR</div>";
-  body.appendChild(totRow); card.appendChild(body); d.appendChild(card);
+  function addRow(k,v){var r=document.createElement("div");r.style.cssText="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.05)";r.innerHTML="<div style='font-size:11px;color:#6E6E73'>"+k+"</div><div style='font-size:11px;font-weight:700;text-align:right;max-width:60%'>"+v+"</div>";body.appendChild(r);}
+  addRow("Client",jcD.name||"--"); addRow("Mobile",jcD.phone||"--"); addRow("Vehicle",jcD.make+" "+jcD.model+" "+jcD.year); addRow("Color",jcD.color||"--"); addRow("Plate",jcD.plate||"--"); addRow("Odometer",(jcD.odo||"--")+" km"); addRow("Fault",jcD.fault?jcD.fault.substring(0,50)+"...":"--"); addRow("Delivery",jcD.delivery||"--");
+  if(selI.length>0){
+    var it=document.createElement("div"); it.style.cssText="font-size:10px;font-weight:700;color:#FFD400;margin:10px 0 6px;text-transform:uppercase"; it.textContent="Services ("+selI.length+")"; body.appendChild(it);
+    selI.forEach(function(x){var r=document.createElement("div");r.style.cssText="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:11px";r.innerHTML="<span>"+x.n+"</span><span style='color:#FFD400;font-weight:700'>"+x.p+" OMR</span>";body.appendChild(r);});
+  }
+  var totRow=document.createElement("div"); totRow.style.cssText="display:flex;justify-content:space-between;padding:10px 0;margin-top:4px"; totRow.innerHTML="<div style='font-size:13px;font-weight:700'>Total</div><div style='font-size:20px;font-weight:900;color:#FFD400'>"+tot.toFixed(3)+" OMR</div>"; body.appendChild(totRow);
+  card.appendChild(body); d.appendChild(card);
   var btns=document.createElement("div"); btns.className="btns"; btns.style.marginTop="12px";
   var wa=document.createElement("button"); wa.className="btn-s"; wa.textContent="WhatsApp";
   var home=document.createElement("button"); home.className="btn"; home.style.flex="1"; home.textContent="Dashboard";
   home.addEventListener("click",function(){jcSt=1;selI=[];goTo("db");});
   btns.appendChild(wa); btns.appendChild(home); d.appendChild(btns); wrap.appendChild(d);
 }
+
+/* Signature canvas */
 function initSig(){
   var c=document.getElementById("sigC"); if(!c||sigInit) return; sigInit=true;
   c.width=c.offsetWidth; c.height=c.offsetHeight;
@@ -552,21 +728,60 @@ function initSig(){
   c.addEventListener("mouseup",function(){draw=false;});
 }
 document.addEventListener("click",function(){setTimeout(initSig,150);});
-var aiHistory=[];
+
+/* AI */
 function sendAI(){
   var inp=document.getElementById("aiIn"); var m=(inp.value||"").trim(); if(!m) return;
-  addM(m,"usr"); inp.value="";
-  var reply=getReply(m.toUpperCase());
-  setTimeout(function(){addM(reply,"bot");},800);
+  addM(m,"usr"); inp.value=""; callAI(m);
 }
-function askAI(el){ addM(el.textContent,"usr"); setTimeout(function(){addM(getReply(el.textContent.toUpperCase()),"bot");},800); }
-function getReply(msg){
-  var codes={"P0305":"Cylinder 5 Misfire. Check spark plug and coil on cylinder 5. Cost: 20-150 OMR.","P0128":"Thermostat stuck open. Replace thermostat. Cost: 60-95 OMR.","P0300":"Random misfire. Check all spark plugs and coils. Cost: 40-200 OMR.","P0420":"Catalytic converter failing. Cost: 200-800 OMR.","P0171":"System lean Bank 1. Check vacuum leaks and MAF sensor."};
-  var fc=msg.match(/P[0-9]{4}/); if(fc&&codes[fc[0]]) return codes[fc[0]];
-  if(msg.indexOf("OIL")>=0) return "Oil leak: Steam clean engine then UV dye test. Common source: valve cover gasket. Cost: 50-300 OMR.";
-  if(msg.indexOf("BRAKE")>=0) return "Brake pads: 40-80 OMR. Rotors: 80-150 OMR. Fluid flush: 30-50 OMR.";
-  if(msg.indexOf("AC")>=0) return "AC recharge: 25-60 OMR. Compressor: 200-600 OMR.";
-  return "Please provide a fault code like P0305 or describe the symptom.";
+function askAI(el){ var m=el.textContent.trim(); addM(m,"usr"); callAI(m); }
+
+function callAI(msg){
+  var tid="t"+Date.now();
+  var c=document.getElementById("aiC");
+  var td=document.createElement("div"); td.className="aim bot"; td.id=tid;
+  td.innerHTML="<div class='aib' style='color:#6E6E73'>...</div>";
+  c.appendChild(td); c.scrollTop=c.scrollHeight;
+  fetch("https://api.anthropic.com/v1/messages",{
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({
+      model:"claude-sonnet-4-20250514",
+      max_tokens:500,
+      system:"You are an expert automotive technician for Al Waqia garage in Oman. Give precise diagnoses with cost in OMR. Be concise.",
+      messages:[{role:"user",content:msg}]
+    })
+  }).then(function(r){return r.json();}).then(function(data){
+    var t=document.getElementById(tid); if(t) t.remove();
+    var reply=(data&&data.content&&data.content[0]&&data.content[0].text)?data.content[0].text:getLocalReply(msg.toUpperCase());
+    addM(reply,"bot");
+  }).catch(function(){
+    var t=document.getElementById(tid); if(t) t.remove();
+    addM(getLocalReply(msg.toUpperCase()),"bot");
+  });
+}
+function getLocalReply(msg){
+  var fc=msg.match(/P[0-9]{4}/);
+  if(fc){
+    var codes={
+      "P0305":"Cylinder 5 Misfire. Check spark plug, coil, injector on cyl 5. Cost: 20-150 OMR.",
+      "P0300":"Random Misfire. Check all spark plugs and coils. Cost: 40-200 OMR.",
+      "P0128":"Thermostat stuck open. Replace thermostat. Cost: 60-95 OMR.",
+      "P0420":"Catalytic converter failing. Cost: 200-800 OMR.",
+      "P0171":"System lean Bank 1. Check vacuum leak and MAF. Cost: 20-200 OMR.",
+      "P0455":"EVAP large leak. Check fuel cap first. Cost: 5-150 OMR.",
+      "P0340":"Camshaft position sensor faulty. Cost: 40-120 OMR.",
+      "P0335":"Crankshaft position sensor faulty. Cost: 35-100 OMR.",
+      "P0507":"Idle RPM high. Clean throttle body. Cost: 15-80 OMR."
+    };
+    return "Code "+fc[0]+": "+(codes[fc[0]]||"Not in database. Please bring vehicle for full scan.");
+  }
+  if(msg.indexOf("OIL")>=0) return "Oil leak: Steam clean engine, UV dye test. Common: valve cover gasket. Cost: 50-300 OMR.";
+  if(msg.indexOf("BRAKE")>=0) return "Brakes: Pads front 45 OMR, rear 40 OMR. Fluid flush 35 OMR. Rotors 80-150 OMR.";
+  if(msg.indexOf("AC")>=0) return "AC: Recharge 35 OMR. Full service 80 OMR. Compressor 200-600 OMR.";
+  if(msg.indexOf("BATTERY")>=0) return "Battery: Test (12.6V+). Replacement 35-120 OMR. Alternator 150-400 OMR.";
+  if(msg.indexOf("BMW")>=0) return "BMW common issues: P0128 thermostat, oil leak valve cover, VANOS solenoid, timing chain. Diagnostic: 45 OMR.";
+  return "Please provide a fault code (e.g. P0305) or describe the symptom in detail.";
 }
 function addM(txt,type){
   var c=document.getElementById("aiC"); var n=new Date();
@@ -576,10 +791,13 @@ function addM(txt,type){
   var time=document.createElement("div"); time.style.cssText="font-size:9px;color:#48484A;margin-top:3px"; time.textContent=tm;
   d.appendChild(bub); d.appendChild(time); c.appendChild(d); c.scrollTop=c.scrollHeight;
 }
+
+/* Logo spread */
 document.addEventListener("DOMContentLoaded",function(){
   var src=document.getElementById("appLogo").src;
   document.querySelectorAll(".logoRef").forEach(function(r){r.src=src;});
 });
+
 setTimeout(function(){goTo("lg");},2000);
 </script>
 </body>
